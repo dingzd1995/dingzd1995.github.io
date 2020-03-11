@@ -42,7 +42,7 @@
   </entry>
   <entry>
     <title>Hello World!</title>
-    <url>/2020/03/01/Hello/</url>
+    <url>/2020/03/01/Hello-World/</url>
     <content><![CDATA[<hr>
 <p>你好世界！我的第一篇hexo文章！</p>
 ]]></content>
@@ -55,7 +55,7 @@
   </entry>
   <entry>
     <title>Hello World!</title>
-    <url>/2020/03/01/Hello-World/</url>
+    <url>/2020/03/01/Hello/</url>
     <content><![CDATA[<hr>
 <p>你好世界！我的第一篇hexo文章！</p>
 ]]></content>
