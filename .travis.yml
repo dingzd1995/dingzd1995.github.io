@@ -1,5 +1,7 @@
 language: node_js
 node_js: stable
+before_install:
+    - export TZ='Asia/Shanghai' # 更改时区
 install:
   - npm install
 script:
