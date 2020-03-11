@@ -1,0 +1,20 @@
+language: node_js
+node_js: stable
+install:
+  - npm install
+script:
+  - hexo g
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "dingzd1995"
+  - git config user.email "dingzd1995@foxmail.com"
+  - git add .
+  - git commit -m "自动构建"
+  - git push --force --quiet "https://${travis}@${GH_REF}" master:master
+branches:
+  only:
+    - source
+env:
+  global:
+    - GH_REF: github.com/dingzd1995/dingzd1995.github.io.git
