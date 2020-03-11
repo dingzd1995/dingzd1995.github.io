@@ -3,6 +3,7 @@ node_js: stable
 install:
   - npm install
 script:
+  - hexo clean
   - hexo g
 after_script:
   - cd ./public
@@ -10,7 +11,7 @@ after_script:
   - git config user.name "dingzd1995"
   - git config user.email "dingzd1995@foxmail.com"
   - git add .
-  - git commit -m "自动构建"
+  - git commit -m "Travis CI Auto Builder at `date +"%Y-%m-%d %H:%M"`"
   - git push --force --quiet "https://${travis}@${GH_REF}" master:master
 branches:
   only:
