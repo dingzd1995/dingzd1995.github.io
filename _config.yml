@@ -1,0 +1,153 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+###网站配置###
+#网站标题
+title: Hexo
+#网站副标题
+subtitle: ''
+#网站描述
+description: ''
+#网站的关键词。使用半角逗号 , 分隔多个关键词。
+keywords:
+#您的名字
+author: dingzd
+#网站使用的语言
+language: zh
+#网站时区。Hexo 默认使用您电脑的时区。对于中国大陆地区可以使用 Asia/Shanghai。
+timezone: 'Asia/Shanghai'
+
+###网址####
+#网址
+url: http://dingzd1995.github.io/
+#网站根目录,默认"/",放在子目录"/子目录/"
+root: /
+#文章的永久链接格式
+permalink: :year/:month/:day/:title/
+#永久链接中各部分的默认值
+permalink_defaults:
+
+pretty_urls:  
+  trailing_index: true # 移除'index.html'后缀
+  trailing_html: true # 移除'.html'后缀
+
+###目录###
+#资源文件夹，这个文件夹用来存放内容。
+source_dir: source
+#公共文件夹，这个文件夹用于存放生成的站点文件。
+public_dir: public
+#标签文件夹
+tag_dir: tags
+#归档文件夹
+archive_dir: archives
+#分类文件夹
+category_dir: categories
+#Include code 文件夹，source_dir 下的子目录
+code_dir: downloads/code
+#国际化（i18n）文件夹
+i18n_dir: :lang
+#跳过指定文件的渲染。匹配到的文件将会被不做改动地复制到 public 目录中。您可使用 glob 表达式来匹配路径。
+skip_render:
+
+###文章###
+#新文章的文件名称
+new_post_name: :title.md
+#预设布局
+default_layout: post
+#把标题转换为 title case
+titlecase: false
+#在新标签中打开链接
+external_link:
+  enable: true # 在新标签中打开链接
+  field: site  #对整个网站（site）生效或仅对文章（post）生效
+  exclude: ''  #需要排除的域名。主域名和子域名如 www 需分别配置
+#把文件名称转换为 (1) 小写或 (2) 大写
+filename_case: 0
+#显示草稿
+render_drafts: false
+#启动 Asset(资源)文件夹
+post_asset_folder: false
+#把链接改为与根目录的相对位址
+relative_link: false
+#显示未来的文章
+future: true
+#代码块的设置
+highlight:
+  enable: true #开启代码块高亮
+  line_number: true #显示行数
+  auto_detect: true #如果未指定语言，则启用自动检测
+  tab_replace: '' #用 n 个空格替换 tabs；如果值为空，则不会替换 tabs
+  wrap: true # 将代码块包装到<table>
+  hljs: false #CSS类使用hljs-*前缀 
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+###分类 & 标签###
+#默认分类
+default_category: uncategorized
+#分类别名
+category_map:
+#标签别名
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## Use post's date for updated date unless set in front-matter
+use_date_for_updated: false
+
+###分页###
+#每页显示的文章量 (0 = 关闭分页功能)
+per_page: 10
+#分页目录
+pagination_dir: page
+
+###包括或不包括目录和文件###
+#Hexo 默认会忽略隐藏文件和文件夹（包括名称以下划线和 . 开头的文件和文件夹，Hexo 的 _posts 和 _data 等目录除外）。通过设置此字段将使 Hexo 处理他们并将它们复制到 source 目录下。
+include:
+#Hexo 会忽略这些文件和目录
+exclude:
+#忽略文件/文件夹
+ignore:
+
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+#当前主题名称。值为false时禁用主题
+theme: diaspora #landscape
+
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+#部署部分的设置
+deploy:
+  type: 'git'
+  repo: https://github.com/dingzd1995/dingzd1995.github.io.git #github仓库地址
+  branch: master # github分支
+ 
+
+#生成压缩后的css 
+stylus:
+  compress: true
+ 
+
+#搜索设置 
+search:
+    path: search.xml
+    field: post
+    format: html
+    limit: 10000
