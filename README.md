@@ -6,6 +6,6 @@
 
 ## 联系方式
 
-主站点：[https://www.idzd.top](https://www.idzd.top )
-静态测试站点：[https://hexo.idzd.top](https://hexo.idzd.top )
-邮箱：dingzd1995#gmail.com（请将 # 替换为 @ ）
+- 主站点：[https://www.idzd.top](https://www.idzd.top )
+- 静态测试站点：[https://hexo.idzd.top](https://hexo.idzd.top )
+- 邮箱：dingzd1995#gmail.com（请将 # 替换为 @ ）
