@@ -1,5 +1,5 @@
 # GitHub Actions 自动构建和部署工作流
-# 用于自动将Hexo博客从source分支构建并部署到gh-pages分支
+# 用于自动将Hexo博客从master分支构建并部署到gh-pages分支
 
 name: Build and Deploy
 
@@ -24,11 +24,11 @@ jobs:
     
     # 任务步骤
     steps:
-      # 步骤1：检出source分支的代码
-      - name: Checkout source branch
+      # 步骤1：检出master分支的代码
+      - name: Checkout master branch
         uses: actions/checkout@v4
         with:
-          ref: source  # 指定检出source分支
+          ref: master  # 指定检出master分支
 
       # 步骤2：设置pnpm包管理器
       # pnpm是快速且节省磁盘空间的npm替代品
