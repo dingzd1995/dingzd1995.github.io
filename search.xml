@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World!</title>
+    <url>/2020/03/01/Hello-World/</url>
+    <content><![CDATA[<hr>
+<p>你好世界！我的第一篇hexo文章！</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo主题diaspora说明文档</title>
+    <url>/2020/03/06/Hexo-theme-diaspora/</url>
+    <content><![CDATA[<p><strong><a href="http://fech.in/">在线预览 | PREVIEW </a></strong></p>
+<p>一款基于WP移植的Hexo主题，适合喜欢摄影，影评，乐评和玩弄文字的你，干净，清新； 响应式，Ajax，更多好玩的等你来发现。 </p>
+<blockquote>
+<p>再次感谢原作者创作出这么精美的主题 <a href="https://github.com/LoeiFy/Diaspora">@Loeify</a> 。如果你喜欢，请捐助原作者。</p>
+</blockquote>
+<p><img src="https://fech.in/static/images/Diaspora.jpg" alt="cover"></p>
+<h3 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/Fechin/hexo-theme-diaspora.git diaspora</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>修改Hexo配置文件 <code>_config.yml</code> 主题项设置为diaspora</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">diaspora</span></span><br><span class="line"><span class="string">...</span></span><br></pre></td></tr></table></figure>
+<h3 id="更新主题"><a href="#更新主题" class="headerlink" title="更新主题"></a>更新主题</h3><p>注意：请在更时主题时备份<code>_config.yml</code>配置文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/diaspora</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="新建文章模板"><a href="#新建文章模板" class="headerlink" title="新建文章模板"></a>新建文章模板</h3><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: My awesome title</span><br><span class="line">date: 2016-10-12 18:38:45</span><br><span class="line">categories: </span><br><span class="line"><span class="bullet">    -</span> 分类1</span><br><span class="line"><span class="bullet">    -</span> 分类2</span><br><span class="line">tags: </span><br><span class="line"><span class="bullet">    -</span> 标签1</span><br><span class="line"><span class="bullet">    -</span> 标签2</span><br><span class="line">mp3: http://domain.com/awesome.mp3</span><br><span class="line"><span class="section">cover: http://domain.com/awesome.jpg</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建分类页"><a href="#创建分类页" class="headerlink" title="创建分类页"></a>创建分类页</h3><p>1 新建一个页面，命名为 categories 。命令如下：</p>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> page categories</span><br></pre></td></tr></table></figure>
+<p>2 编辑刚新建的页面，将页面的类型设置为 categories</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2014-12-22 12:39:04</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;categories&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>主题将自动为这个页面显示所有分类。</p>
+<h3 id="创建标签页"><a href="#创建标签页" class="headerlink" title="创建标签页"></a>创建标签页</h3><p>1 新建一个页面，命名为 tags 。命令如下：</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> page <span class="keyword">tags</span></span><br></pre></td></tr></table></figure>
+<p>2 编辑刚新建的页面，将页面的类型设置为 tags</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2014-12-22 12:39:04</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>主题将自动为这个页面显示所有标签。</p>
+<h3 id="创建搜索页"><a href="#创建搜索页" class="headerlink" title="创建搜索页"></a>创建搜索页</h3><p>1 需要安装hexo的搜索插件</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+
+<p>2 配置hexo全局配置文件（请将生成的索引文件放在网站根目录或修改主题js文件的path值）</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+
+<p>3 新建一个页面，命名为 search 。命令如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> page <span class="keyword">search</span></span><br></pre></td></tr></table></figure>
+<p>4 编辑刚新建的页面，将页面的类型设置为 search</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">search</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2014-12-22 12:39:04</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">&quot;search&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p>5 在主题配置文件启用本地搜索</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment">#本地搜索,请将索引文件放在网站根目录</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">    <span class="comment">#是否启用</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>主题将自动为这个页面显示搜索功能。</p>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 头部菜单，title: link</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">首页:</span> <span class="string">/</span></span><br><span class="line">  <span class="string">分类:</span> <span class="string">/categories</span></span><br><span class="line">  <span class="string">标签:</span> <span class="string">/tags</span></span><br><span class="line">  <span class="string">归档:</span> <span class="string">/archives</span>  </span><br><span class="line">  <span class="string">关于:</span> <span class="string">/about</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否显示目录</span></span><br><span class="line"><span class="attr">TOC:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否自动播放音乐</span></span><br><span class="line"><span class="attr">autoplay:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认音乐（随机播放）</span></span><br><span class="line"><span class="attr">mp3:</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="string">http://link.hhtjim.com/163/425570952.mp3</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">http://link.hhtjim.com/163/425570952.mp3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 首页封面图, 为空时取文章的cover作为封面(注意跨域问题,建议使用同源图片)</span></span><br><span class="line"><span class="attr">welcome_cover:</span> <span class="string">/img/welcome-cover.jpg</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认文章封面图（随机调用,支持外链）</span></span><br><span class="line"><span class="attr">cover:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="string">/img/cover.jpg</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">/img/welcome-cover.jpg</span></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 是否关闭默认滚动条</span></span><br><span class="line"><span class="attr">scrollbar:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地搜索,请将索引文件放在网站根目录,或修改主题js文件的path值</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">    <span class="comment"># 是否启用</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否显示 一言(hitokoto)</span></span><br><span class="line"><span class="attr">hitokoto:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 链接(可选:facebook,twitter,github,wechat,email)</span></span><br><span class="line"><span class="attr">links:</span></span><br><span class="line">    <span class="attr">facebook:</span> <span class="string">/</span></span><br><span class="line">    <span class="attr">twitter:</span> <span class="string">/</span></span><br><span class="line">    <span class="attr">github:</span> <span class="string">/</span></span><br><span class="line">    <span class="attr">wechat:</span> <span class="string">/img/logo.png</span></span><br><span class="line">    <span class="attr">email:</span> <span class="string">mailto:xxxx@gmail.com</span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># 备案</span></span><br><span class="line"><span class="attr">beian:</span> </span><br><span class="line">    <span class="comment"># 是否显示备案信息</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># 是否在主页面最底下显示备案信息(虽然丑，但是完全满足规定要求)</span></span><br><span class="line">    <span class="attr">enableFooter:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># 备案号</span></span><br><span class="line">    <span class="attr">beianInfo:</span> <span class="string">冀ICP备xxxxxxx号</span></span><br><span class="line">    <span class="comment"># 链接地址</span></span><br><span class="line">    <span class="attr">link:</span> <span class="string">http://www.beian.miit.gov.cn</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Gitalk 评论插件（https://github.com/gitalk/gitalk）</span></span><br><span class="line"><span class="attr">gitalk:</span></span><br><span class="line">    <span class="comment"># 是否启用评论功能</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># 是否自动展开评论框</span></span><br><span class="line">    <span class="attr">autoExpand:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># 应用编号</span></span><br><span class="line">    <span class="attr">clientID:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="comment"># 应用秘钥</span></span><br><span class="line">    <span class="attr">clientSecret:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="comment"># issue仓库名</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="comment"># Github名</span></span><br><span class="line">    <span class="attr">owner:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="comment"># Github名</span></span><br><span class="line">    <span class="attr">admin:</span> [<span class="string">&#x27;&#x27;</span>]</span><br><span class="line">    <span class="comment"># Ensure uniqueness and length less than 50</span></span><br><span class="line">    <span class="attr">id:</span> <span class="string">location.pathname</span></span><br><span class="line">    <span class="comment"># Facebook-like distraction free mode</span></span><br><span class="line">    <span class="attr">distractionFreeMode:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 网站关键字</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">Fechin</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 要使用google_analytics进行统计的话，这里需要配置ID</span></span><br><span class="line"><span class="attr">google_analytics:</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># 网站ico</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">/img/favicon.ico</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># rss文件</span></span><br><span class="line"><span class="attr">rss:</span> <span class="string">atom.xml</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+  </entry>
+  <entry>
+    <title>chackout_gitHub_actions</title>
+    <url>/2025/10/23/chackout-gitHub-actions/</url>
+    <content><![CDATA[<hr>
+<p><img src="/images/page_img/github_act/2025_10_23_15_43_16.jpg"></p>
+<p>本站点已经切换到GitHub Actions构建了。简单快捷，专注写作！</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Waxy 简约自适应博客主题</title>
+    <url>/2020/10/21/typecho-theme-waxy/</url>
+    <content><![CDATA[<p><strong><a href="https://www.idzd.top/">在线预览 | PREVIEW</a></strong></p>
+<p>Waxy 简约自适应博客主题，轻量高效，悦于书写！</p>
+<p><img src="/images/page_img/typecho-theme-waxy/screenshot.png" alt="Waxy 简约自适应博客主题"></p>
+<blockquote>
+<p>本主题参考<strong>seventeen主题</strong>，由其修改更新而来，感谢原作者的辛苦付出！</p>
+</blockquote>
+<h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><p><strong>主题下载地址：<a href="https://github.com/dingzd1995/typecho-theme-waxy/releases/v2020.10.18">GitHub</a> &amp; <a href="https://pic.idzd.top/typecho-theme-waxy/v2020.10.18.zip">CDN</a></strong></p>
+<p>MD5: 178AF3DD2EC62859CD75BA36A12302F6</p>
+<p>SHA1: C6A14FCDA06BE5C75CD356B879B443054CA9130D</p>
+<p>把主题上传到 Typecho 安装路径下的 <code>usr/themes/</code> 目录，然后解压，你也可以先解压在上传。</p>
+<p>解压完成后，请将主题目录重命名为<code>Waxy</code>，并保证所有主题文件在此目录下。</p>
+<p>登录 Typecho 的管理后台，进入 <code>控制台</code> -&gt; <code>外观</code>，点击 <strong>Waxy</strong> 主题下方的<code>启用</code>按钮即可启用。</p>
+<p>如需修改主题设置，请点击<code>设置外观</code>进入主题设置。</p>
+<h2 id="主题功能介绍"><a href="#主题功能介绍" class="headerlink" title="主题功能介绍"></a>主题功能介绍</h2><ul>
+<li><p>轻量高效，悦于书写</p>
+</li>
+<li><p>响应式布局</p>
+</li>
+<li><p>图片懒加载&#x2F;灯箱</p>
+</li>
+<li><p>自定义侧边栏&#x2F;JS&#x2F;CSS样式</p>
+</li>
+<li><p>文章置顶&#x2F;标星&#x2F;首图&#x2F;内容失效提醒&#x2F;阅读剩余部分</p>
+</li>
+<li><p>短代码快捷功能（多彩提示框&#x2F;多彩文字提示&#x2F;简易提示框&#x2F;收缩框&#x2F;快捷插入音频&amp;视频）</p>
+</li>
+<li><p>置顶公告&#x2F;CDN切换&#x2F;代码高亮&#x2F;时间线&#x2F;归档页面&#x2F;Sitemap&#x2F;技术统计</p>
+</li>
+</ul>
+<h3 id="短代码"><a href="#短代码" class="headerlink" title="短代码"></a>短代码</h3><p>短代码可以快速为你提供更多展示效果。使文章层次更丰富。</p>
+<h4 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h4><p><img src="/images/page_img/typecho-theme-waxy/shortcode.png" alt="短代码效果"></p>
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#多彩提示框</span></span><br><span class="line">[info]一般提示[/info]</span><br><span class="line">[warning]警告提示[/warning]</span><br><span class="line">[danger]危险提示[/danger]</span><br><span class="line">[info]多行内容测试：&lt;br /&gt;</span><br><span class="line">生活如酒，或芳香，或浓烈，因为诚实，它变得醇厚；生活如歌，或高昂，或低沉，因为守信，它变得悦耳； 生活如画，或明丽，或素雅，因为诚信，它变得美丽。[/info]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#文字提示</span></span><br><span class="line">[em]警告文字样式[/em]</span><br><span class="line">[hi]高亮文字样式[/hi]</span><br><span class="line">[lo]备注文字样式[/lo]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#插入视频（支持视频静音，自动播放，循环播放）</span></span><br><span class="line">[video src=<span class="string">&quot;视频地址&quot;</span> poster=<span class="string">&quot;视频封面地址（可省略）&quot;</span> muted=<span class="string">&quot;muted&quot;</span> autoplay=<span class="string">&quot;autoplay&quot;</span> loop=<span class="string">&quot;loop&quot;</span> ]</span><br><span class="line"></span><br><span class="line"><span class="comment">#插入音频（支持自动播放，循环播放）</span></span><br><span class="line">[audio src=<span class="string">&quot;音频地址&quot;</span> autoplay=<span class="string">&quot;autoplay&quot;</span> loop=<span class="string">&quot;loop&quot;</span> ]</span><br><span class="line"></span><br><span class="line"><span class="comment">#PS：某些浏览器限制，可能无法自动播放，不过一般静音视频不受影响~</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#简易提示框（添加close=&quot;close&quot;，可以激活关闭按钮）</span></span><br><span class="line">[alert style=<span class="string">&quot;success&quot;</span> close=<span class="string">&quot;close&quot;</span>]简易提示框：success，默认样式[/alert]</span><br><span class="line">[alert style=<span class="string">&quot;info&quot;</span> close=<span class="string">&quot;close&quot;</span>]简易提示框：info[/alert]</span><br><span class="line">[alert style=<span class="string">&quot;warning&quot;</span> close=<span class="string">&quot;close&quot;</span>]简易提示框：warning[/alert]</span><br><span class="line">[alert style=<span class="string">&quot;danger&quot;</span> close=<span class="string">&quot;close&quot;</span>]简易提示框：danger[/alert]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#收缩框（添加checked=&quot;checked&quot;，自动展开收缩框；style，控制外观样式）</span></span><br><span class="line">[shrinks title=<span class="string">&quot;收缩框：默认样式，自动展开&quot;</span> checked=<span class="string">&quot;checked&quot;</span>]内容[/shrinks]</span><br><span class="line">[shrinks title=<span class="string">&quot;收缩框：primary&quot;</span> style=<span class="string">&quot;primary&quot;</span>]内容[/shrinks]</span><br><span class="line">[shrinks title=<span class="string">&quot;收缩框：success&quot;</span> style=<span class="string">&quot;success&quot;</span>]内容[/shrinks]</span><br><span class="line">[shrinks title=<span class="string">&quot;收缩框：info&quot;</span> style=<span class="string">&quot;info&quot;</span>]内容[/shrinks]</span><br><span class="line">[shrinks title=<span class="string">&quot;收缩框：warning&quot;</span> style=<span class="string">&quot;warning&quot;</span>]内容[/shrinks]</span><br><span class="line">[shrinks title=<span class="string">&quot;收缩框：danger&quot;</span> style=<span class="string">&quot;danger&quot;</span>]内容[/shrinks]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>基于<a href="https://prismjs.com/download.html#themes=prism-okaidia&languages=markup+css+clike+javascript+apacheconf+c+csharp+bash+cpp+aspnet+coffeescript+markup-templating+git+less+java+php+javadoclike+markdown+json+nginx+sql+python+javadoc+smarty&plugins=line-numbers+toolbar+normalize-whitespace+show-language+copy-to-clipboard+match-braces">prism.js</a>实现，自带8种主题。</p>
+<p><img src="/images/page_img/typecho-theme-waxy/lightcode.png" alt="代码高亮设置"></p>
+<blockquote>
+<p>移植于<a href="https://github.com/Copterfly/CodeHighlighter-for-Typecho">CodeHighlighter-for-Typecho插件</a>，感谢原作者的辛苦劳动！</p>
+</blockquote>
+<h3 id="自定义侧边栏"><a href="#自定义侧边栏" class="headerlink" title="自定义侧边栏"></a>自定义侧边栏</h3><p><img src="/images/page_img/typecho-theme-waxy/sidebar.png" alt="自定义侧边栏"></p>
+<h3 id="自定义CSS-x2F-JS"><a href="#自定义CSS-x2F-JS" class="headerlink" title="自定义CSS&#x2F;JS"></a>自定义CSS&#x2F;JS</h3><p><img src="/images/page_img/typecho-theme-waxy/css.png" alt="自定义CSS/JS"></p>
+<p>PS:通过与置顶公告联动，还可以实现一言效果~</p>
+<p><img src="/images/page_img/typecho-theme-waxy/hitokoto.gif" alt="hitokoto"></p>
+<h3 id="友情链接管理"><a href="#友情链接管理" class="headerlink" title="友情链接管理"></a>友情链接管理</h3><p>一行一条，格式(请用半角空格或逗号分隔)：网站名称,网站地址,网站图标(建议:32x32),网站说明</p>
+<p><img src="/images/page_img/typecho-theme-waxy/links.png" alt="友情链接管理"></p>
+<h3 id="文章首图"><a href="#文章首图" class="headerlink" title="文章首图"></a>文章首图</h3><p>如果想使用首图，请在文章自定义字段 img 添加网址即可</p>
+<h3 id="文章标星"><a href="#文章标星" class="headerlink" title="文章标星"></a>文章标星</h3><p>如果想在文章右上角显示一个显眼的标记，请添加文章自定义字段 star 即可</p>
+<p><img src="/images/page_img/typecho-theme-waxy/star.png" alt="star"></p>
+<h3 id="文章内容失效提醒"><a href="#文章内容失效提醒" class="headerlink" title="文章内容失效提醒"></a>文章内容失效提醒</h3><p><img src="/images/page_img/typecho-theme-waxy/remind.png" alt="remind"></p>
+<h3 id="置顶公告-amp-文章"><a href="#置顶公告-amp-文章" class="headerlink" title="置顶公告&amp;文章"></a>置顶公告&amp;文章</h3><p><img src="/images/page_img/typecho-theme-waxy/top.png" alt="top"></p>
+<p><strong>2020&#x2F;10&#x2F;05</strong>可以同时置顶多篇文章，滚动展示。</p>
+<p><em>多篇文章置顶效果：</em></p>
+<p><img src="/images/page_img/typecho-theme-waxy/top.gif" alt="top"></p>
+<h3 id="阅读剩余部分"><a href="#阅读剩余部分" class="headerlink" title="阅读剩余部分"></a>阅读剩余部分</h3><p>在需要截断文章的位置插入<code>&lt;!--more--&gt;</code>即可</p>
+<p><img src="/images/page_img/typecho-theme-waxy/more.png" alt="more"></p>
+<h3 id="时间线-x2F-归档页面"><a href="#时间线-x2F-归档页面" class="headerlink" title="时间线&#x2F;归档页面"></a>时间线&#x2F;归档页面</h3><p><img src="/images/page_img/typecho-theme-waxy/page_timeline.png" alt="page_timeline"></p>
+<p><img src="/images/page_img/typecho-theme-waxy/page_articles.png" alt="page_articles"></p>
+<h3 id="Sitemap-x2F-网站地图"><a href="#Sitemap-x2F-网站地图" class="headerlink" title="Sitemap&#x2F;网站地图"></a>Sitemap&#x2F;网站地图</h3><p><strong>百度&#x2F;谷歌站长工具正常收录</strong></p>
+<p><img src="/images/page_img/typecho-theme-waxy/sitemap_show.png" alt="百度/谷歌站长工具正常收录"></p>
+<p>标准模式和纯文本模式（添加参数<code>?txt=1</code>）</p>
+<p><img src="/images/page_img/typecho-theme-waxy/sitemap.png" alt="标准模式和纯文本模式（添加参数`?txt=1`）"></p>
+<p>启用Sitemap&#x2F;网站地图</p>
+<p><img src="/images/page_img/typecho-theme-waxy/sitemap_edit.png" alt="启用Sitemap/网站地图"></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>wcf简单入门教程</title>
+    <url>/2020/03/04/wcf%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<blockquote>
+<p>Windows Communication Foundation(WCF)是由微软开发的一系列支持数据通信的应用程序框架，可以翻译为Windows 通讯开发平台。</p>
+</blockquote>
+<p>整合了原有的windows通讯的 .net Remoting，WebService，Socket的机制，并融合有 <strong>HTTP</strong> 和 <strong>FTP</strong> 的相关技术。</p>
+<p>是Windows平台上开发分布式应用最佳的实践方式。</p>
+<p>简单的归结为四大部分:</p>
+<ol>
+<li>网络服务的协议，即用什么网络协议开放客户端接入。</li>
+<li>业务服务的协议，即声明服务提供哪些业务。</li>
+<li>数据类型声明，即对客户端与服务器端通信的数据部分进行一致化。</li>
+<li>传输安全性相关的定义。</li>
+</ol>
+<p>它是.NET框架的一部分，由 .NET Framework3.0 开始引入，与Windows Presentation Foundation及Windows Workflow Foundation并行为新一代 Windows操作系统以及 WinFX 的三个重大应用程序开发类库。</p>
+<p>在 .NET Framework2.0 以及前版本中，微软发展了Web Service(SOAP with HTTP communication)，.NET Remoting (TCP&#x2F;HTTP&#x2F;Pipeline communication) 以及基础的 Winsock 等通信支持。</p>
+<p>由于各个通信方法的设计方法不同，而且彼此之间也有相互的重叠性，对于开发人员来说，不同的选择会有不同的程序设计模型，而且必须要重新学习，让开发人员在使用中有许多不便。同时，面向服务架构(Service-Oriented Architecture) 也开始盛行于软件工业中，因此微软重新查看了这些通信方法，并设计了一个统一的程序开发模型，对于数据通信提供了最基本最有弹性的支持，这就是 Windows Communication Foundation。</p>
+<hr>
+<h2 id="WCF-简单教程"><a href="#WCF-简单教程" class="headerlink" title="WCF 简单教程"></a>WCF 简单教程</h2><blockquote>
+<p>访问：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/iamlilinfeng/archive/2012/09/25/2700049.html">无废话WCF入门教程一</a></li>
+<li><a href="https://www.cnblogs.com/jiekzou/p/5325310.html">WCF入门教程1</a></li>
+<li><a href="https://www.jb51.net/article/81107.htm">C# WCF简单入门图文教程(VS2010版)</a></li>
+<li><a href="https://pan.baidu.com/s/1mg6zQIG">WCF技术专题视频教程</a></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+        <tag>.net</tag>
+        <tag>wcf</tag>
+        <tag>教程</tag>
+        <tag>敷衍zhd专用</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自动构建测试</title>
+    <url>/2020/03/13/%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<hr>
+<p><img src="/images/page_img/auto_ci/travis-ci_auto.png"></p>
+<p>本站点已经启用travis-ci自动构建构建页面。简单快捷，专注写作！</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+</search>
