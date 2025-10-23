@@ -5,10 +5,10 @@ name: Build and Deploy
 
 # 工作流触发条件
 on:
-  # 当source分支有push事件时触发
+  # 当master分支有push事件时触发
   push:
     branches:
-      - source  # 监听source分支的更新
+      - master  # master
   # 允许手动触发工作流（在GitHub Actions页面可以手动运行）
   workflow_dispatch:
 
