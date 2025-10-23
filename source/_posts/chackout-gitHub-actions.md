@@ -9,6 +9,6 @@ tags:
 
 -----------
 
-![](https://raw.githubusercontent.com/dingzd1995/dingzd1995.github.io/master/img/page_img/github_act/2025_10_23_15_43_16.jpg)
+![](/images/page_img//github_act/2025_10_23_15_43_16.jpg)
 
 本站点已经切换到GitHub Actions构建了。简单快捷，专注写作！

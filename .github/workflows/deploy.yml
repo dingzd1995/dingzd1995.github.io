@@ -68,6 +68,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # 指定要部署的目录（Hexo生成的静态文件所在）
           publish_dir: ./public
+          # 指定目标分支为master
+          # publish_branch: master
           # 自定义域名配置（可选）
           # 如果你有自定义域名，在这里填写，比如 blog.example.com
           cname: hexo.idzd.top
