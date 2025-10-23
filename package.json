@@ -1,28 +1,42 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "dingzd-blog-hexo",
+  "version": "25.10.23",
+  "description": "dingzd的个人博客，基于Hexo搭建",
   "private": true,
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "start": "hexo server",
+    "generate": "hexo generate",
+    "new": "hexo new"
   },
   "hexo": {
-    "version": "4.2.0"
+    "version": "8.0.0"
   },
   "dependencies": {
-    "hexo": "^4.0.0",
-    "hexo-deployer-git": "^2.1.0",
+    "hexo": "^8.0.0",
+    "hexo-cli": "^4.3.2",
+    "hexo-deployer-git": "^3.0.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-index": "^1.0.0",
-    "hexo-generator-searchdb": "^1.2.0",
+    "hexo-generator-searchdb": "^1.5.0",
     "hexo-generator-tag": "^1.0.0",
     "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-jade": "^0.3.0",
-    "hexo-renderer-marked": "^2.0.0",
-    "hexo-renderer-stylus": "^1.1.0",
-    "hexo-server": "^1.0.0"
-  }
+    "hexo-renderer-marked": "^5.0.0",
+    "hexo-renderer-stylus": "^2.1.0",
+    "hexo-server": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-hexo": "^4.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "packageManager": "pnpm@10.19.0"
 }

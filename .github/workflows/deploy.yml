@@ -1,0 +1,75 @@
+# GitHub Actions 自动构建和部署工作流
+# 用于自动将Hexo博客从source分支构建并部署到gh-pages分支
+
+name: Build and Deploy
+
+# 工作流触发条件
+on:
+  # 当source分支有push事件时触发
+  push:
+    branches:
+      - source  # 监听source分支的更新
+  # 允许手动触发工作流（在GitHub Actions页面可以手动运行）
+  workflow_dispatch:
+
+# 设置工作流权限
+permissions:
+  contents: write  # 允许写入仓库内容（部署到gh-pages分支需要）
+
+# 定义一个名为deploy的任务
+jobs:
+  deploy:
+    # 运行环境：最新的Ubuntu系统
+    runs-on: ubuntu-latest
+    
+    # 任务步骤
+    steps:
+      # 步骤1：检出source分支的代码
+      - name: Checkout source branch
+        uses: actions/checkout@v4
+        with:
+          ref: source  # 指定检出source分支
+
+      # 步骤2：设置pnpm包管理器
+      # pnpm是快速且节省磁盘空间的npm替代品
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10  # 使用pnpm 10.x版本
+
+      # 步骤3：设置Node.js运行环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'  # 使用Node.js 20 LTS版本
+          cache: 'pnpm'       # 启用pnpm缓存，加快后续安装速度
+
+      # 步骤4：安装项目依赖
+      # --frozen-lockfile 确保依赖版本一致性，不会自动更新
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # 步骤5：构建Hexo站点
+      # 这会在public文件夹生成静态HTML文件
+      - name: Build site
+        run: pnpm build
+
+      # 步骤6：复制README.md到public目录
+      # 这样部署的站点会包含README文件
+      - name: Copy README to public
+        run: cp README.md ./public/README.md
+
+      # 步骤7：部署到GitHub Pages
+      # 使用peaceiris/actions-gh-pages将public文件夹部署到gh-pages分支
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # 使用GitHub自动生成的token进行认证
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # 指定要部署的目录（Hexo生成的静态文件所在）
+          publish_dir: ./public
+          # 自定义域名配置（可选）
+          # 如果你有自定义域名，在这里填写，比如 blog.example.com
+          cname: hexo.idzd.top
+          # force_orphan: true 表示gh-pages分支会被完全覆盖（推荐）
+          force_orphan: true

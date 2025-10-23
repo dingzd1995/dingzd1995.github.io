@@ -5,7 +5,7 @@ categories:
  - 笔记
 tags:
  - 随笔
-cover: https://pic.idzd.top/usr/cover/cover_007.jpeg
+cover: /images/cover_007.jpeg
 ---
 
 **[在线预览 | PREVIEW](https://www.idzd.top/)**

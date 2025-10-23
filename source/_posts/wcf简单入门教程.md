@@ -9,7 +9,7 @@ tags:
  - wcf
  - 教程
  - 敷衍zhd专用
-cover: https://pic.idzd.top/usr/cover/cover_002.jpeg
+cover: /images/cover_002.jpeg
 ---
 >Windows Communication Foundation(WCF)是由微软开发的一系列支持数据通信的应用程序框架，可以翻译为Windows 通讯开发平台。
 
