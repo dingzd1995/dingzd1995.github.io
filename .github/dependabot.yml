@@ -1,0 +1,8 @@
+version: 2
+updates:
+  # npm依赖 - 禁用自动更新
+  - package-ecosystem: "npm"
+    directory: "/"
+    # 设置为never表示完全禁用自动更新
+    schedule:
+      interval: "never"
